@@ -1,0 +1,58 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- finalizacao:
+    use_entities: true
+- saudacoes:
+    use_entities: true
+- perguntar_clima:
+    use_entities: true
+- informar_cidade:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+entities:
+- cidade
+slots:
+  cidade:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_saudacoes:
+  - text: Olá
+  - text: Oi
+  - text: Bom dia
+  utter_finalizacao:
+  - text: Até breve
+  - text: Até mais
+  - text: Tchau, tchau
+  utter_fallback:
+  - text: Não entendi. Pode repetir a pergunta?
+  utter_ask_cidade:
+  - text: De qual cidade você gostaria de saber o clima?
+  - text: Você gostaria de saber o clima de qual lugar?
+  - text: Qual seria a cidade que você deseja consultar o clima?
+  - text: Por favor, informe a cidade que se deseja saber o clima.
+actions:
+- action_get_clima
+forms:
+  clima_form:
+    ignored_intents:
+    - perguntar_clima
+    required_slots:
+      cidade:
+      - entity: cidade
+        not_intent: perguntar_clima
+        type: from_entity
+e2e_actions: []

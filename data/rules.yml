@@ -1,0 +1,33 @@
+version: "2.0"
+
+rules:
+- rule: responde cumprimento
+  steps:
+    - intent: saudacoes
+    - action: utter_saudacoes
+- rule: responde finalizacao
+  steps:
+    - intent: finalizacao
+    - action: utter_finalizacao
+- rule: responde pergunta clima
+  steps:
+    - intent: perguntar_clima
+    - action: utter_ask_cidade
+- rule: obtem informacao cidade
+  steps:
+    - intent: informar_cidade
+    - action: clima_form
+    - active_loop: clima_form
+- rule: enviar form cidade 
+  condition:
+    - active_loop: clima_form
+  steps:
+    - action: clima_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_get_clima
+- rule: fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback

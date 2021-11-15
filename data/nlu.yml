@@ -1,0 +1,137 @@
+version: "2.0"
+nlu:
+- intent: saudacoes
+  examples: |
+    - oi
+    - ola
+    - ola, tudo bem?
+    - olá, tudo bem?
+    - bom dia
+    - olá
+    - tudo bem?
+    - boa tarde
+    - boa noite
+    - ol
+    - bo dia
+    - bomdia
+    - Bomdia
+- intent: finalizacao
+  examples: |
+    - tchau
+    - Tchau
+    - Chau
+    - chau
+    - ctchau
+    - tchau, tchau
+    - adeus
+    - até logo
+    - foi um prazer
+    - até mais
+    - até breve
+    - xau
+    - falou
+- intent: perguntar_clima
+  examples: |
+    - gostaria de saber como está o clima?
+    - como está o clima?
+    - qual o clima?
+    - clima
+    - me fale sobre o clima
+    - vai chover?
+    - está calor?
+    - qual a previsão do tempo?
+    - Qual a previsao do tempo?
+    - previsao
+    - previsao do tempo
+    - me diga o clima
+    - gostaria de saber qual a previsão do tempo
+    - poderia me dizer a previsão do tempo
+- intent: informar_cidade
+  examples: |
+    - a cidade é [Brasília](cidade)
+    - [Brasília](cidade)
+    - em [Brasília](cidade)
+    - a cidade é [Rio de Janeiro](cidade)
+    - [Rio de Janeiro](cidade)
+    - a cidade é [São Paulo](cidade)
+    - [São Paulo](cidade)
+    - de [Cabixi](cidade)
+    - de [Peixe-Boi](cidade)
+    - cidade [Peixe-Boi](cidade)
+    - de [Santa Rita do Novo Destino](cidade)
+    - cidade [Santa Rita do Novo Destino](cidade)
+    - em [Santa Rita do Novo Destino](cidade)
+    - a cidade é [Santa Rita do Novo Destino](cidade)
+    - [Santa Rita do Novo Destino](cidade)
+    - de [Valparaíso de Goiás](cidade)
+    - cidade [Valparaíso de Goiás](cidade)
+    - em [Valparaíso de Goiás](cidade)
+    - a cidade é [Valparaíso de Goiás](cidade)
+    - [Valparaíso de Goiás](cidade)
+    - de [Bahia](cidade)
+    - cidade [Bahia](cidade)
+    - em [Bahia](cidade)
+    - a cidade é [Bahia](cidade)
+    - [Bahia](cidade)
+    - de [Machadinho D'Oeste](cidade)
+    - cidade [Machadinho D'Oeste](cidade)
+    - em [Machadinho D'Oeste](cidade)
+    - a cidade é [Machadinho D'Oeste](cidade)
+    - [Machadinho D'Oeste](cidade)
+    - de [Presidente Castelo Branco](cidade)
+    - cidade [Presidente Castelo Branco](cidade)
+    - em [Presidente Castelo Branco](cidade)
+    - a cidade é [Presidente Castelo Branco](cidade)
+    - [Presidente Castelo Branco](cidade)
+    - de [Primeiro de Maio](cidade)
+    - cidade [Primeiro de Maio](cidade)
+    - em [Primeiro de Maio](cidade)
+    - a cidade é [Primeiro de Maio](cidade)
+    - [Primeiro de Maio](cidade)
+    - de [Pontal do Paraná](cidade)
+    - cidade [Pontal do Paraná](cidade)
+    - em [Pontal do Paraná](cidade)
+    - a cidade é [Pontal do Paraná](cidade)
+    - [Pontal do Paraná](cidade)
+    - [Recanto das Emas](cidade)
+    - no [Recanto das Emas](cidade)
+    - do [Recanto das Emas](cidade)
+- synonym: Brasília
+  examples: |
+    - BSB
+    - Brasilia
+    - brasila
+    - brasilia
+    - bsb
+    - basilia
+    - df
+    - brasilia-df
+    - distrito federal
+    - brasilia, df
+- synonym: São Paulo
+  examples: |
+    - SP
+    - Sampa
+- synonym: Rio de Janeiro
+  examples: |
+    - Rio
+    - RJ
+- synonym: Bahia
+  examples: |
+    - BH
+    - baea
+    - bh
+    - baia
+- lookup: cidade
+  examples: |
+    - Brasília
+    - Rio de Janeiro
+    - Peixe-Boi
+    - Cabixi
+    - Santa Rita do Novo Destino
+    - Valparaíso de Goiás
+    - Machadinho D'Oeste
+    - Presidente Castelo Branco
+    - Primeiro de Maio
+    - Pontal do Paraná
+    - Recanto das Emas
