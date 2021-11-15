@@ -1,7 +1,7 @@
 # Weather Chatbot Assistant
 
 Klima tells the current weather forecast for a certain city.
-Currently it has been defined mostly brazilian counties.
+Currently it has been defined for use mostly with brazilian counties.
 
 For the weather forecasting API we used https://hgbrasil.com/status/weather
 Simply create an account and an API key for the weather forecasting API.
